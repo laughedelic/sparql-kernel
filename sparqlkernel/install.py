@@ -31,10 +31,11 @@ PKGNAME = os.path.basename( MODULEDIR )
 
 # The kernel specfile
 kernel_json = {
-    "argv": [sys.executable, 
-	     "-m", PKGNAME, 
+    "argv": [sys.executable,
+	     "-m", PKGNAME,
 	     "-f", "{connection_file}"],
     "display_name": DISPLAY_NAME,
+    "language": LANGUAGE,
     "name": KERNEL_NAME
 }
 
@@ -155,7 +156,7 @@ class SparqlKernelInstall( InstallKernelSpec ):
         config=True,
         help="""Default directory to use for the logfile."""
     )
-    aliases =  { 'logdir' : 'SparqlKernelInstall.logdir' } 
+    aliases =  { 'logdir' : 'SparqlKernelInstall.logdir' }
 
     def parse_command_line(self, argv):
         """
